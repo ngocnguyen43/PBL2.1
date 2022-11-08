@@ -16,6 +16,10 @@ void Store::setLength()
     }
     this->length = i;
 }
+void Store::setLength(int length)
+{
+    this->length = length;
+}
 int Store::getLength()
 {
     return this->length;
@@ -50,34 +54,55 @@ void Store::setdata()
         double productDiscount = stod(temp[i + 10]);
         double productPrice = stod(temp[i + 11]);
         i = i + 12;
-        Product *p = new Product[1];
-        p->setProduct(id, pruductName, brandName, year, productMass, productColor, productFuelCap, productCydeCap, productGasConsume, productAmount, productDiscount, productPrice);
+        Product p;
+        Product ss;
+        p.setProduct(id, pruductName, brandName, year, productMass, productColor, productFuelCap, productCydeCap, productGasConsume, productAmount, productDiscount, productPrice);
+        ss.setProduct(id, pruductName, brandName, year, productMass, productColor, productFuelCap, productCydeCap, productGasConsume, productAmount, productDiscount, productPrice);
         this->listProduct.push_back(p);
+        this->test.push_back(ss);
     }
 }
 void Store::showProduct()
 {
-    cout << setw(10) << "ID"
-         << "  "
-         << setw(15) << "Ten Mat Hang"
-         << "  "
-         << setw(10) << "Khoi Luong"
-         << "  "
-         << setw(10) << "Mau Sac"
-         << "\t"
-         << setw(20) << "Dung Tich Xang"
-         << "  "
-         << setw(20) << "Dung Tich XiLanh"
-         << "  "
-         << setw(10) << "S di dc"
-         << "  "
-         << setw(10) << "Giam Gia"
-         << "  "
-         << setw(10) << "So Luong"
-         << "  "
-         << setw(10) << "Gia Ban" << endl;
+    // cout << setw(10) << "ID"
+    //      << "  "
+    //      << setw(15) << "Ten Mat Hang"
+    //      << "  "
+    //      << setw(10) << "Khoi Luong"
+    //      << "  "
+    //      << setw(10) << "Mau Sac"
+    //      << "\t"
+    //      << setw(20) << "Dung Tich Xang"
+    //      << "  "
+    //      << setw(20) << "Dung Tich XiLanh"
+    //      << "  "
+    //      << setw(10) << "S di dc"
+    //      << "  "
+    //      << setw(10) << "Giam Gia"
+    //      << "  "
+    //      << setw(10) << "So Luong"
+    //      << "  "
+    //      << setw(10) << "Gia Ban" << endl;
     for (int i = 0; i < this->getLength(); i++)
     {
-        this->listProduct[i]->showProduct();
+        this->listProduct[i].showProduct();
+        // this->test[i].showProduct();
     }
+}
+void Store::NhapTay(int n)
+{
+
+    for (int i = 0; i < n; i++)
+    {
+        Product temp;
+        cout << "Nhap vao mat hang thu " << i + 1 << ": " << endl;
+        cin >> temp;
+        this->listProduct.push_back(temp);
+        cout << "--------------------------------------------------" << endl;
+    }
+    // Product *TEMP = test[0];
+    // this->listProduct.push_back(test[0]);
+}
+void Store::deleteElement()
+{
 }

@@ -112,9 +112,10 @@ int main()
     // p->setProduct(id, nameProduct, brandName, year, massProduct, color, fuelCap, cydeCap, gasConsume, amount, discount, price);
     // system("pause");
     Store s;
-    s.setLength();
-    // cout << s.getLength();
-    s.setdata();
+    // s.NhapTay(1);
+    // s.setLength(1);
+    //    cout << s.getLength();
+    //   s.setdata();
     s.showProduct();
     return 0;
 }

@@ -50,4 +50,6 @@ public:
     void setPrice(double);
     void setProduct(int, string, string, int, string, string, string, string, string, int, double, double);
     void showProduct();
+    friend istream &operator>>(istream &, Product &);
+    const Product &operator=(const Product &);
 };

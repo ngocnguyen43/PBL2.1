@@ -115,5 +115,28 @@ void Product::setProduct(int id, string name, string brand, int year, string mas
 };
 void Product::showProduct()
 {
-    cout << this->getId() << "," << this->getNameProduct() << "," << this->getPrice() << endl;
+    cout << setw(10) << this->getId() << ",";
+    //  << setw(10) << this->getNameProduct() << ","
+    //  //<< setw(10) << this->getYear() << ","
+    //  << setw(10) << this->getMassProduct() << ","
+    //  << setw(10) << this->getFuelCap() << ","
+    //  << setw(10) << this->getCydeCap() << ","
+    //  << setw(10) << this->getGasConsume() << ","
+    //  //<< setw(10) << this->getAmount() << ","
+    //  << setw(10) << this->getDiscount() << ","
+    //  << setw(10) << this->getPrice() << ","
+    //  << setw(10) << this->getPrice() << endl;
+}
+istream &
+operator>>(istream &in, Product &P)
+{
+    cout << "Nhap ma mat hang: ";
+    // fflush(stdin);
+    in >> P.id;
+    return in;
+}
+const Product &Product::operator=(const Product &P2)
+{
+    //
+    return *this;
 }
